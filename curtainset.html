@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Set Curtains</title>
+	<style>
+		body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333333;
+  }
+  
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #F5F5F5;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  select,
+  input[type="number"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 4 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 0L0 2h4zm0 5L0 3h4z' fill='%23E0E0E0'/%3E%3C/svg%3E");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: auto 60%;
+    padding-right: 40px;
+  }
+  
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #FF6700;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 0px #D35400;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #FF8C4B;
+  }
+  
+  a button {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #FF6700;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 0px #D35400;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  a button:hover {
+    background-color: #FF8C4B;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333333;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+	</style>
+</head>
+<body>
+	<h1>Curtain Settings</h1>
+
+	<form method="post" action="save_curtainset.php">
+		<label for="curtain_name">Curtain Number </label>
+		<select id="curtain_name" name="curtain_name">
+			<option value="Curtain1">Curtain1</option>
+			<option value="Curtain2">Curtain2</option>
+      <option value="Curtain3">Curtain3</option>
+			<option value="Curtain4">Curtain4</option>
+      <option value="Curtain5">Curtain5</option>
+		</select>
+
+		<label for="curtain_status">Situation</label>
+		<select id="curtain_status" name="curtain_status" onchange="updateStage()">
+			<option value="Open">Open</option>
+			<option value="Close">Close</option>
+		</select>
+
+    <label for="stage">Stage</label>
+    <select id="stage" name="stage">
+      <option value="-" disabled>-</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+
+		<button type="submit">Submit</button>
+	</form>
+
+  <a href="curtains.php"><button>Turn Back</button></a>
+
+  <script>
+    function updateStage() {
+      var curtainStatus = document.getElementById("curtain_status").value;
+      var stageSelect = document.getElementById("stage");
+
+      if (curtainStatus === "Close") {
+        stageSelect.value = "-";
+        stageSelect.disabled = true;
+      } else {
+        stageSelect.disabled = false;
+        stageSelect.selectedIndex = 0;
+      }
+    }
+  </script>
+
+</body>
+</html>

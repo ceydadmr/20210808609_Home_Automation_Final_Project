@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Device List</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F5F5F5;
+			font-family: Arial, sans-serif;
+		}
+		
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		
+		.device-category {
+			margin-top: 30px;
+		}
+		
+		.device-title {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		
+		.device-list {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		
+		.device-item {
+			width: calc(33.33% - 20px);
+			margin-bottom: 20px;
+			padding: 20px;
+			background-color: #FFFFFF;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s ease;
+			text-align: center;
+			cursor: pointer;
+		}
+		
+		.device-item:hover {
+			transform: translateY(-5px);
+		}
+		
+		.device-icon {
+			width: 30px;
+			height: 30px;
+			margin-bottom: 10px;
+		}
+		
+		.device-name {
+			font-weight: bold;
+			font-size: 16px;
+		}
+
+        .device-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .device-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .device-name {
+            font-size: 14px;
+        }
+
+        /* header başlangıcı */
+		
+		nav {
+            position: absolute;
+            top: 0px;
+            right: 90px;
+        }
+
+        nav ul {
+		   display: flex;
+		   flex-direction: row;
+		   align-items: center;
+		   list-style-type: none;
+        }
+
+        nav ul li {
+		   margin-left: 20px;
+        }
+
+        nav ul li:first-child {
+		    margin-left: 0;
+        }
+
+        nav ul li a {
+			color: #FFFFFF;
+			text-decoration: none;
+			font-weight: 500;
+        }
+		nav ul li a:hover {
+			color: #A4B0BD;
+		}
+
+		header {
+            margin-bottom: 150px;
+			background-color: #000000;
+			color: #FFFFFF;
+			height: 80px; 
+			line-height: 80px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 999;
+			width: 100%;
+        
+		}
+	</style>
+</head>
+<body>
+    <header>
+		<div class="container">
+			<nav>
+				<ul>
+					<li><a href="home.html">Main Menu</a></li>
+					<li><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+			
+		</div>
+	</header>
+
+	<div class="container">
+		<h1>Device List</h1>
+
+		<div class="device-category">
+			<h2 class="device-title">Lights</h2>
+			<div class="device-list">
+				<div class="device-item">
+					<img class="device-icon" src="light_icon.png" alt="">
+					<span class="device-name">Light 1</span>
+				</div>
+				<div class="device-item">
+					<img class="device-icon" src="light_icon.png" alt="">
+					<span class="device-name">Light 2</span>
+				</div>
+				<div class="device-item">
+					<img class="device-icon" src="light_icon.png" alt="">
+					<span class="device-name">Light 3</span>
+				</div>
+				<div class="device-item">
+					<img class="device-icon" src="light_icon.png" alt="">
+					<span class="device-name">Light 4</span>
+				</div>
+				<div class="device-item">
+					<img class="device-icon" src="light_icon.png" alt="">
+					<span class="device-name">Light 5</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="device-category">
+			<h2 class="device-title">Air Conditioners</h2>
+			<div class="device-list">
+				<div class="device-item">
+					<img class="device-icon" src="ac_icon.png" alt="">
+					<span class="device-name">Air Conditioner 1</span>
+				</div>
+				<div class="device-item">
+					<img class="device-icon" src="ac_icon.png" alt="">
+					<span class="device-name">Air Conditioner 2</span>
+				</div>
+				<div class="device-item">
+					<img class="device-icon" src="ac_icon.png" alt="">
+					<span class="device-name">Air Conditioner 3</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="device-category">
+			<h2 class="device-title">Curtains</h2>
+			<div class="device-list">
+				<div class="device-item">
+					<img class="device-icon" src="curtain_icon.png" alt="">
+					<span class="device-name">Curtain 1</span>
+				</div>
+				<div class="device-item">
+					<img class="device-icon" src="curtain_icon.png" alt="">
+					<span class="device-name">Curtain 2</span>
+				</div>
+				<div class="device-item">
+					<img class="device-icon" src="curtain_icon.png" alt="">
+					<span class="device-name">Curtain 3</span>
+				</div>
+				<div class="device-item">
+					<img class="device-icon" src="curtain_icon.png" alt="">
+					<span class="device-name">Curtain 4</span>
+				</div>
+				<div class="device-item">
+					<img class="device-icon" src="curtain_icon.png" alt="">
+					<span class="device-name">Curtain 5</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

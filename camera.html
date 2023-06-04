@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Camera</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F5F5F5;
+			font-family: Arial, sans-serif;
+		}
+		
+		/* header stil düzenlemeleri */
+
+		nav {
+            position: absolute;
+            top: 0px;
+            right: 90px;
+        }
+
+        nav ul {
+		   display: flex;
+		   flex-direction: row;
+		   align-items: center;
+		   list-style-type: none;
+        }
+
+        nav ul li {
+		   margin-left: 20px;
+        }
+
+        nav ul li:first-child {
+		    margin-left: 0;
+        }
+
+        nav ul li a {
+			color: #FFFFFF;
+			text-decoration: none;
+			font-weight: 500;
+        }
+		
+		nav ul li a:hover {
+			color: #A4B0BD;
+		}
+
+		header {
+            margin-bottom: 350px;
+			background-color: #000000;
+			color: #FFFFFF;
+			height: 80px; 
+			line-height: 80px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 999;
+			width: 100%;        
+		}
+		
+		/* cihaz resimleri ve stil düzenlemeleri */
+
+		.device-images {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-top: 250px;
+		}
+
+		.device-images img {
+            
+			width: 200px;
+			height: auto;
+			margin: 20px;
+			cursor: pointer;
+			transition: transform 0.3s ease;
+		}
+
+		.device-images img:hover {
+			transform: scale(3);
+		}
+	</style>
+</head>
+<body>
+    <header>
+		<div class="container">
+			<nav>
+				<ul>
+					<li><a href="home.html">Main Menu</a></li>
+					<li><a href="index.html">Home</a></li>
+				</ul>
+			</nav>			
+		</div>
+	</header>
+
+	
+
+	<div class="device-images">
+		<img src="camera1.jpg" alt="Image 1">
+		<img src="camera2.jpg" alt="Image 2">
+		<img src="camera3.jpg" alt="Image 3">
+		<img src="camera4.jpg" alt="Image 4">
+		<img src="camera5.jpg" alt="Image 5">
+	</div>
+</body>
+</html>

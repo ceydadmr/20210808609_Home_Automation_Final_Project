@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		#sensor_value {
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			padding: 5px;
+			font-size: 16px;
+			margin-top: 10px;
+		}
+	</style>
+	
+	<title>Producer Page</title>
+	<link rel="stylesheet" type="text/css" href="producerpagestyle.css">
+	<script>
+		function showValueInput() {
+			var sensorName = document.getElementById("sensor_name").value;
+			var sensorType = document.getElementById("sensor_type").value;
+			var valueInput = document.getElementById("sensor_value");
+			if (sensorName.startsWith("Light")) {
+				if (sensorType == "Close") {
+					valueInput.value = "-";
+					valueInput.disabled = true;
+				} else {
+					valueInput.setAttribute("type", "number");
+					valueInput.setAttribute("min", "1");
+					valueInput.setAttribute("max", "10");
+					valueInput.value = "1";
+					valueInput.disabled = false;
+				}
+			} else if (sensorName.startsWith("Aircondition")) {
+				if (sensorType == "Close") {
+					valueInput.value = "-";
+					valueInput.disabled = true;
+				} else {
+					valueInput.setAttribute("type", "number");
+					valueInput.setAttribute("min", "18");
+					valueInput.setAttribute("max", "35");
+					valueInput.value = "18";
+					valueInput.disabled = false;
+				}
+			} else {
+				valueInput.value = "";
+				valueInput.disabled = false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Producer</h1>
+	<form method="post" action="submit.php">
+		<label for="sensor_name">Sensor Name:</label>
+		<select id="sensor_name" name="sensor_name" onchange="showValueInput()">
+			<option value="Light1">Light1</option>
+			<option value="Light2">Light2</option>
+			<option value="Light3">Light3</option>
+			<option value="Light4">Light4</option>
+			<option value="Light5">Light5</option>
+			<option value="Aircondition1">Aircondition1</option>
+			<option value="Aircondition2">Aircondition2</option>
+			<option value="Aircondition3">Aircondition3</option>
+			<option value="Aircondition">All Airconditions</option>
+			<option value="Curtain1">Curtain1</option>
+			<option value="Curtain2">Curtain2</option>
+            <option value="Curtain3">Curtain3</option>
+			<option value="Curtain4">Curtain4</option>
+            <option value="Curtain5">Curtain5</option>
+		</select><br><br>
+		<label for="sensor_type">Sensor Type:</label>
+		<select id="sensor_type" name="sensor_type" onchange="showValueInput()">
+			<option value="Open">Open</option>
+			<option value="Close">Close</option>
+		</select><br><br>
+		<label for="sensor_value">Sensor Value:</label>
+		<input type="text" id="sensor_value" name="sensor_value" disabled required><br><br>
+		<input type="submit" name="submit" value="Submit">
+		<input type="submit" name="view" value="View Sensors">
+	</form>
+
+<footer style="background-color: black; width: 100%; height: 100px; position: absolute; bottom: 0;">
+	<div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+	  <a href="index.html" style="color: white; text-decoration: none;">
+		<button style="background-color: black; border: 2px solid white; color: white; padding: 10px 20px; border-radius: 5px;">
+		  Home
+		</button>
+	  </a>
+	</div>
+  </footer>
+	
+</body>
+</html>
